@@ -1,30 +1,61 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Frontend Quiz App Solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [Frontend quiz app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL).
 
-Currently, two official plugins are available:
+I used:
+![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat)
+![Vite Badge](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff&style=flat)
+![Redux Badge](https://img.shields.io/badge/Redux-764ABC?logo=redux&logoColor=fff&style=flat)
+![Framer Badge](https://img.shields.io/badge/Framer-05F?logo=framer&logoColor=fff&style=flat)
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?logo=styled-components&logoColor=fff&style=flat)
+![Vercel Badge](https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=fff&style=flat)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [Overview](#overview)
+  - [User Features](#user-features)
+  - [Links](#links)
+- [My Process](#my-process)
+  - [Built With](#built-with)
+  - [What I Learned](#what-i-learned)
+  - [Continued Development](#continued-development)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Overview
 
-- Configure the top-level `parserOptions` property like this:
+### User Features
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Can search for words using the input field
+- Can see the Free Dictionary API's response for the searched word
+- Can see a form validation message when trying to submit a blank form
+- Can play the audio file for a word when it's available
+- Can switch between serif, sans serif, and monospace fonts
+- Can switch between light and dark themes
+- Can view the optimal layout for the interface depending on their device's screen size
+- Can see hover and focus states for all interactive elements on the page
+- Can have the correct color scheme chosen for them based on their computer preferences. Hint: Research prefers-color-scheme in CSS.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Links
+
+- Solution URL:
+  [![GitHub Badge](https://img.shields.io/badge/GitHub-Frontend%20Quiz%20App-3F54A3?logo=github&logoColor=fff&style=flat)](https://github.com/nyiyezin/fem-dictionary-web-app)
+
+- Live Site URL:
+  [![Vercel Badge](https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=fff&style=flat)](https://fem-frontend-quiz-npqfn0v48-nyz83s-projects.vercel.app/)
+
+## My Process
+
+### Built With
+
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A fast build tool that significantly speeds up the development process.
+- **Redux Toolkit**: A powerful state management library for managing application state in React applications.
+- **Tailwind CSS**: A utility-first CSS framework for creating custom, responsive designs with ease.
+- **Framer Motion**: A library for adding smooth animations and interactive motion effects to web applications.
+
+### What I Learned
+
+I have become more comfortable using React Redux Toolkit (RTK) and Framer Motion. I feel like my productivity has slightly increased, although thinking about the logic before writing the actual implementation is still a challenge for me.
+
+### Continued Development
+
+I aim to try out Cypress testing using this project.
