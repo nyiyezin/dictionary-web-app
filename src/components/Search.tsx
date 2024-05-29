@@ -7,14 +7,14 @@ import {
   Input,
   SearchIcon,
   AlertMessage,
-} from "../styles/components";
+} from "../styles/Search.styled";
 import { useAppDispatch } from "../redux/store";
 import { setSearchValue, selectSearch } from "../redux/searchSlice.ts";
 import { reset } from "../redux/wordSlice";
 import { fetchWords } from "../redux/wordSliceFetchAsync";
 import { url } from "../api/index.ts";
 
-const Search = () => {
+export function Search() {
   const dispatch = useAppDispatch();
   const searchValue = useSelector(selectSearch);
   const [visibleAlert, setVisibleAlert] = useState(false);
@@ -65,6 +65,4 @@ const Search = () => {
       </AnimatePresence>
     </SearchElement>
   );
-};
-
-export default Search;
+}

@@ -12,7 +12,7 @@ import {
   FontTogglePopUpContainer,
   FontTogglePopUpItem,
   TogglesDivider,
-} from "../styles/components";
+} from "../styles/Header.styled";
 import { fontsFamily } from "../libs/constants";
 import {
   selectFont,
