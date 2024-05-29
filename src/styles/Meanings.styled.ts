@@ -13,9 +13,9 @@ export const PartOfSpeech = styled.div`
 `;
 
 export const PartOfSpeechTitle = styled.p`
-  font-size: var(--fs-hm);
-  line-height: var(--lh-hm);
-  font-weight: var(--fw-bold);
+  font-size: var(--font-size-heading-medium);
+  line-height: var(--line-height-heading-medium);
+  font-weight: var(--font-weight-bold);
 
   display: flex;
   align-items: center;
@@ -26,8 +26,8 @@ export const PartOfSpeechTitle = styled.p`
   }
 
   @media (max-width: 425px) {
-    font-size: var(--fs-bm);
-    line-height: var(--lh-bm);
+    font-size: var(--font-size-body-medium);
+    line-height: var(--line-height-body-medium);
 
     column-gap: 16px;
 
@@ -56,9 +56,9 @@ export const MeaningWrapper = styled.div`
 `;
 
 export const MeaningTitle = styled.p`
-  font-size: var(--fs-hs);
-  line-height: var(--lh-hs);
-  font-weight: var(--fw-regular);
+  font-size: var(--font-size-heading-small);
+  line-height: var(--line-height-heading-small);
+  font-weight: var(--font-weight-regular);
   color: var(--secondary);
 
   &:not(:last-child) {
@@ -66,8 +66,8 @@ export const MeaningTitle = styled.p`
   }
 
   @media (max-width: 425px) {
-    font-size: var(--fs-bms);
-    line-height: var(--lh-bms);
+    font-size: var(--font-size-body-mediums);
+    line-height: var(--line-height-body-mediums);
 
     &:not(:last-child) {
       margin-bottom: 17px;
@@ -107,9 +107,9 @@ export const DefinitionWrapper = styled.li`
 `;
 
 export const DefinitionItem = styled.p`
-  font-size: var(--fs-bm);
-  line-height: var(--lh-bm);
-  font-weight: var(--fw-regular);
+  font-size: var(--font-size-body-medium);
+  line-height: var(--line-height-body-medium);
+  font-weight: var(--font-weight-regular);
 
   &:not(:last-child) {
     margin-bottom: 13px;
@@ -121,15 +121,15 @@ export const DefinitionItem = styled.p`
 `;
 
 export const DefinitionExample = styled.p`
-  font-size: var(--fs-bm);
-  line-height: var(--lh-bm);
-  font-weight: var(--fw-regular);
+  font-size: var(--font-size-body-medium);
+  line-height: var(--line-height-body-medium);
+  font-weight: var(--font-weight-regular);
 
   color: var(--secondary);
 
   @media (max-width: 425px) {
     font-size: 15px;
-    line-height: var(--lh-bms);
+    line-height: var(--line-height-body-mediums);
   }
 `;
 
@@ -147,26 +147,26 @@ export const VariantWrapper = styled.div`
 `;
 
 export const VariantTitle = styled.div`
-  font-size: var(--fs-hs);
-  line-height: var(--lh-hs);
-  font-weight: var(--fw-regular);
+  font-size: var(--font-size-heading-small);
+  line-height: var(--line-height-heading-small);
+  font-weight: var(--font-weight-regular);
   color: var(--secondary);
 
   @media (max-width: 425px) {
-    font-size: var(--fs-bms);
-    line-height: var(--lh-bms);
+    font-size: var(--font-size-body-mediums);
+    line-height: var(--line-height-body-mediums);
   }
 `;
 
 export const VariantWords = styled.div`
-  font-size: var(--fs-hs);
-  line-height: var(--lh-hs);
-  font-weight: var(--fw-bold);
+  font-size: var(--font-size-heading-small);
+  line-height: var(--line-height-heading-small);
+  font-weight: var(--font-weight-bold);
   color: var(--accent);
 
   @media (max-width: 425px) {
-    font-size: var(--fs-bms);
-    line-height: var(--lh-bms);
+    font-size: var(--font-size-body-mediums);
+    line-height: var(--line-height-body-mediums);
   }
 `;
 

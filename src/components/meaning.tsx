@@ -42,11 +42,15 @@ export function Meaning({ words }: IMeaningProps) {
       <PhoneticWrapper>
         <WordWrapper>
           <NormalWord>{word}</NormalWord>
-          {phonetic && <PhoneticWord>{phonetic}</PhoneticWord>}
+          {phonetic ? (
+            <PhoneticWord>{phonetic}</PhoneticWord>
+          ) : (
+            <PhoneticWord>No Phonetic Found!</PhoneticWord>
+          )}
         </WordWrapper>
         {sortAudio && (
-          <PlayButton onClick={playAudio}>
-            <Play />
+          <PlayButton  onClick={playAudio}>
+            <Play width={25} height={25}/>
           </PlayButton>
         )}
         <audio

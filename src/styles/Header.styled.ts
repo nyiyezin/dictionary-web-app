@@ -34,9 +34,9 @@ export const TogglesDivider = styled.div`
 `;
 
 export const FontToggle = styled.button`
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-bm);
-  line-height: var(--lh-bm);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-body-medium);
+  line-height: var(--line-height-body-medium);
 
   display: flex;
   align-items: center;
@@ -47,8 +47,8 @@ export const FontToggle = styled.button`
   @media (max-width: 425px) {
     column-gap: 17px;
 
-    font-size: var(--fs-bs);
-    line-height: var(--lh-bm);
+    font-size: var(--font-size-body-small);
+    line-height: var(--line-height-body-medium);
   }
 `;
 
@@ -72,8 +72,8 @@ export const FontTogglePopUpContainer = styled.ul`
 `;
 
 export const FontTogglePopUpItem = styled.li<{ font: string }>`
-  font-size: var(--fs-bm);
-  line-height: var(--lh-bm);
+  font-size: var(--font-size-body-medium);
+  line-height: var(--line-height-body-medium);
 
   font-family: var(${(props) => props.font});
 

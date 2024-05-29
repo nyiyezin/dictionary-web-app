@@ -21,40 +21,49 @@ export const PhoneticWrapper = styled.div`
 export const WordWrapper = styled.div``;
 
 export const NormalWord = styled.h1`
-  font-size: var(--fs-hl);
-  line-height: var(--lh-hl);
-  font-weight: var(--fw-bold);
+  font-size: var(--font-size-heading-large);
+  line-height: var(--line-height-heading-large);
+  font-weight: var(--font-weight-heading-medium);
 
   &:not(:last-child) {
     margin-bottom: 8px;
   }
 
   @media (max-width: 425px) {
-    font-size: var(--fs-hml);
-    line-height: var(--lh-hml);
+    font-size: var(--font-size-heading-mobile);
+    line-height: var(--line-height-heading-mobile);
   }
 `;
 
 export const PhoneticWord = styled.div`
-  font-size: var(--fs-hm);
-  line-height: var(--lh-hm);
-  font-weight: var(--fw-regular);
+  font-size: var(--font-size-heading-medium);
+  line-height: var(--line-height-heading-medium);
+  font-weight: var(--font-weight-regular);
   color: var(--accent);
 
   @media (max-width: 425px) {
-    font-size: var(--fs-bm);
-    line-height: var(--lh-bm);
+    font-size: var(--font-size-body-medium);
+    line-height: var(--line-height-body-medium);
   }
 `;
 
 export const PlayButton = styled.button`
   width: 75px;
   height: 75px;
-
+  border-radius: 50%;
+  border: 1px solid var(--color-text);
   transition: all 0.15s ease 0s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:active {
     transform: scale(0.95);
+  }
+
+  &:hover {
+    background-color: whitesmoke;
+    opacity: 0.5;
   }
 
   @media (max-width: 425px) {
@@ -80,16 +89,16 @@ export const SourceWrapper = styled.div`
 `;
 
 export const SourceTitle = styled.div`
-  font-size: var(--fs-bs);
-  line-height: var(--lh-bs);
-  font-weight: var(--fw-regular);
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+  font-weight: var(--font-weight-regular);
   color: var(--secondary);
 `;
 
 export const SourceUrlsUl = styled.ul`
-  font-size: var(--fs-bs);
-  line-height: var(--lh-bs);
-  font-weight: var(--fw-regular);
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+  font-weight: var(--font-weight-regular);
 `;
 
 export const SourceUrlsLi = styled.li`

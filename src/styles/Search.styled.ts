@@ -31,9 +31,9 @@ export const Input = styled.input.attrs(() => ({
   padding: 20px 64px 20px 24px;
   outline: 1px solid ${(props) => (props.alert ? "var(--alert)" : "none")};
 
-  font-size: var(--fs-hs);
-  line-height: var(--lh-hs);
-  font-weight: var(--fw-bold);
+  font-size: var(--font-size-heading-small);
+  line-height: var(--line-height-heading-small);
+  font-weight: var(--font-weight-bold);
 
   &::placeholder {
     opacity: 0.25;
@@ -45,8 +45,8 @@ export const Input = styled.input.attrs(() => ({
   }
 
   @media (max-width: 425px) {
-    font-size: var(--fs-bms);
-    line-height: var(--lh-bms);
+    font-size: var(--font-size-body-mediums);
+    line-height: var(--line-height-body-mediums);
 
     padding: 15px 64px 15px 24px;
   }
@@ -60,8 +60,8 @@ export const SearchIcon = styled(Icon)`
 `;
 
 export const AlertMessage = styled(motion.div)`
-  font-size: var(--fs-hs);
-  line-height: var(--lh-hs);
+  font-size: var(--font-size-heading-small);
+  line-height: var(--line-height-heading-small);
 
   color: var(--alert);
 `;
