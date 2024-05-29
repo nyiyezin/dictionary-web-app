@@ -24,7 +24,7 @@ export interface IWord {
 }
 
 interface InitialState {
-  word:IWord[];
+  word: IWord[];
   status: string;
 }
 
