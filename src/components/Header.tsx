@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AnimatePresence } from "framer-motion";
 import { ChevronDown, Moon } from "lucide-react";
 import {
   HeaderElement,
@@ -11,16 +13,24 @@ import {
   FontTogglePopUpItem,
   TogglesDivider,
 } from "../styles/components";
-import { AnimatePresence } from "framer-motion";
 import { fontsFamily } from "../libs/constants";
+import {
+  selectFont,
+  selectTheme,
+  setFont,
+  setTheme,
+} from "../redux/themeSlice";
 
 export function Header() {
+  const dispatch = useDispatch();
+  const theme = useSelector(selectTheme);
+  const font = useSelector(selectFont);
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const fontToggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    document.body.setAttribute("data-theme", "light");
-    document.body.setAttribute("data-font", "Mono");
+    document.body.setAttribute("data-theme", theme);
+    document.body.setAttribute("data-font", font);
   });
 
   useEffect(() => {
@@ -45,7 +55,7 @@ export function Header() {
           onClick={() => setIsVisible(isVisible === false ? true : false)}>
           <ChevronDown
             stroke="#A445ED"
-            stroke-width="1.5"
+            strokeWidth="1.5"
           />
           <AnimatePresence>
             {isVisible && (
@@ -60,7 +70,8 @@ export function Header() {
                   {fontsFamily.map((item) => (
                     <FontTogglePopUpItem
                       key={item.text}
-                      font={item.font}>
+                      font={item.font}
+                      onClick={() => dispatch(setFont(item.text))}>
                       {item.text}
                     </FontTogglePopUpItem>
                   ))}
@@ -70,8 +81,13 @@ export function Header() {
           </AnimatePresence>
         </FontToggle>
         <TogglesDivider />
-        <ThemeToggleWrapper toggle={false}>
-          <ThemeToggle toggle={false} />
+        <ThemeToggleWrapper toggle={theme === "dark"}>
+          <ThemeToggle
+            toggle={theme === "dark"}
+            onClick={() =>
+              dispatch(setTheme(theme === "light" ? "dark" : "light"))
+            }
+          />
         </ThemeToggleWrapper>
         <Moon stroke="currentColor" />
       </TogglesWrapper>
