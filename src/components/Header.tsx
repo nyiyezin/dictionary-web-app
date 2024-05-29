@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AnimatePresence } from "framer-motion";
-import { ChevronDown, Moon } from "lucide-react";
+import { ChevronDown, Moon, Sun } from "lucide-react";
 import {
   HeaderElement,
   ThemeToggle,
@@ -89,7 +89,21 @@ export function Header() {
             }
           />
         </ThemeToggleWrapper>
-        <Moon stroke="currentColor" />
+        {theme === "light" ? (
+          <Moon
+            stroke="currentColor"
+            onClick={() =>
+              dispatch(setTheme(theme === "light" ? "dark" : "light"))
+            }
+          />
+        ) : (
+          <Sun
+            stroke="currentColor"
+            onClick={() =>
+              dispatch(setTheme(theme === "dark" ? "light" : "dark"))
+            }
+          />
+        )}
       </TogglesWrapper>
     </HeaderElement>
   );
