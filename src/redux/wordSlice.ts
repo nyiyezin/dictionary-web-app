@@ -41,19 +41,16 @@ export const wordSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchWords.pending, (state) => {
-      console.log("Идет запрос");
       state.word = [];
       state.status = "loading";
     });
 
     builder.addCase(fetchWords.fulfilled, (state, action) => {
-      console.log("Запрос прошел удачно");
       state.word = action.payload;
       state.status = "success";
     });
 
     builder.addCase(fetchWords.rejected, (state) => {
-      console.log("Ошибка запроса");
       state.word = [];
       state.status = "error";
     });
