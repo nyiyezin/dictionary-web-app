@@ -4,6 +4,7 @@ import { DictionaryElement, Container } from "./styles/components";
 import GlobalStyles from "./styles/global";
 import { Header } from "./components/Header";
 import { PersistGate } from "redux-persist/integration/react";
+import Search from "./components/Search";
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
         <DictionaryElement>
           <Container>
             <Header />
-            <h1>Hello World!</h1>
+            <Search />
           </Container>
         </DictionaryElement>
         <GlobalStyles />
