@@ -22,8 +22,7 @@ export const SearchForm = styled.form`
   }
 `;
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const Input = styled.input.attrs((props) => ({
+export const Input = styled.input.attrs(() => ({
   placeholder: "Search for any word…",
 }))<{ alert: boolean }>`
   width: 100%;
