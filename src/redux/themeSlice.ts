@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "./store";
-import { FontText } from "../libs/types";
+import type { RootState } from "./store";
+import type { FontText, ThemeText } from "../libs/types";
 
-export interface ITheme {
-  theme: "light" | "dark";
+export interface ThemeState {
+  theme: ThemeText;
   font: FontText;
 }
 
-const initialState: ITheme = {
+const initialState: ThemeState = {
   theme: "light",
   font: "Sans Serif",
 };
@@ -17,10 +17,10 @@ const themeSlice = createSlice({
   name: "theme",
   initialState,
   reducers: {
-    setTheme(state, action: PayloadAction<"light" | "dark">) {
+    setTheme(state, action: PayloadAction<ThemeText>) {
       state.theme = action.payload;
     },
-    setFont(state, action: PayloadAction<"Sans Serif" | "Serif" | "Mono">) {
+    setFont(state, action: PayloadAction<FontText>) {
       state.font = action.payload;
     },
   },

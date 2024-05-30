@@ -1,31 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "./store";
-import { fetchWords } from "./wordSliceFetchAsync";
+import axios from "axios";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import type { RootState } from "./store";
+import type { Word } from "../libs/types";
 
-export interface IWord {
-  word: string;
-  phonetic: string;
-  phonetics: {
-    text: string;
-    audio: string;
-  }[];
-  meanings: {
-    partOfSpeech: string;
-    definitions: {
-      definition: string;
-      synonyms: string[];
-      antonyms: string[];
-      example: string;
-    }[];
-    synonyms: string[];
-    antonyms: string[];
-  }[];
-  sourceUrls: string[];
-}
-
+export interface WordState extends Word {}
 interface InitialState {
-  word: IWord[];
+  word: WordState[];
   status: string;
+}
+interface FetchWordAsyncParamsState {
+  url: string;
+  searchValue: string;
 }
 
 const initialState: InitialState = {
@@ -40,22 +25,30 @@ export const wordSlice = createSlice({
     reset: () => initialState,
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchWords.pending, (state) => {
-      state.word = [];
-      state.status = "loading";
-    });
-
-    builder.addCase(fetchWords.fulfilled, (state, action) => {
-      state.word = action.payload;
-      state.status = "success";
-    });
-
-    builder.addCase(fetchWords.rejected, (state) => {
-      state.word = [];
-      state.status = "error";
-    });
+    builder
+      .addCase(fetchWordAsync.pending, (state) => {
+        state.word = [];
+        state.status = "loading";
+      })
+      .addCase(fetchWordAsync.fulfilled, (state, action) => {
+        state.word = action.payload;
+        state.status = "success";
+      })
+      .addCase(fetchWordAsync.rejected, (state) => {
+        state.word = [];
+        state.status = "error";
+      });
   },
 });
+
+export const fetchWordAsync = createAsyncThunk(
+  "word/fetchWordAsync",
+  async (params: FetchWordAsyncParamsState) => {
+    const { url, searchValue } = params;
+    const response = await axios.get<WordState[]>(`${url}${searchValue}`);
+    return response.data;
+  }
+);
 
 export const selectWord = (state: RootState) => state.wordReducer.word;
 export const selectStatus = (state: RootState) => state.wordReducer.status;

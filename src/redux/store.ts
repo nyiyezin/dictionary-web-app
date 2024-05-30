@@ -1,10 +1,10 @@
 import { useDispatch } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import themeReducer from "./themeSlice";
 import searchReducer from "./searchSlice";
 import wordReducer from "./wordSlice";
-import storage from "redux-persist/lib/storage";
 
 const persistConfig = { key: "dictionary", storage };
 

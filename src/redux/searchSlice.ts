@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "./store";
+import type { RootState } from "./store";
 
-export interface ISearch {
+export interface SearchState {
   searchValue: string;
 }
 
-const initialState: ISearch = {
+const initialState: SearchState = {
   searchValue: "",
 };
 
