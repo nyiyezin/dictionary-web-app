@@ -48,7 +48,7 @@ export function Header() {
 
   return (
     <HeaderElement>
-      <img src="/assets/logo.svg" />
+      <img src="./assets/logo.svg" />
       <TogglesWrapper>
         <FontToggle
           ref={fontToggleRef}
