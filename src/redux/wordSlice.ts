@@ -3,9 +3,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { RootState } from "./store";
 import type { Dictionary } from "../libs/types";
 
-export interface WordState extends Dictionary {}
 interface InitialState {
-  word: WordState[];
+  word: Dictionary;
   status: string;
 }
 interface FetchWordAsyncParamsState {
@@ -45,7 +44,7 @@ export const fetchWordAsync = createAsyncThunk(
   "word/fetchWordAsync",
   async (params: FetchWordAsyncParamsState) => {
     const { url, searchValue } = params;
-    const response = await axios.get<WordState[]>(`${url}${searchValue}`);
+    const response = await axios.get<Dictionary>(`${url}${searchValue}`);
     return response.data;
   }
 );

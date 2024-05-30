@@ -6,14 +6,14 @@ import { DictionaryElement, Container } from "../styles/App.styled";
 import { selectWord } from "../redux/wordSlice";
 
 export function Dictionary() {
-  const words = useSelector(selectWord);
+  const data = useSelector(selectWord);
   return (
     <DictionaryElement>
       <Container>
         <Header />
         <Search />
-        {words.length > 0 &&
-          words.map((word, index) => {
+        {data.length > 0 &&
+          data.map((word, index) => {
             return (
               <Word
                 key={index}
