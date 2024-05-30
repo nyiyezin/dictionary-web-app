@@ -46,7 +46,7 @@ export function Search() {
           ref={inputRef}
           onChange={handleOnChange}
           value={searchValue}
-          alert={!visibleAlert}
+          alert={String(!visibleAlert)}
         />
         <SearchIcon />
       </SearchForm>
