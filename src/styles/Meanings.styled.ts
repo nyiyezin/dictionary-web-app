@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PartOfSpeech = styled.div`
+export const Meaning = styled.div`
   &:not(:last-child) {
     margin-bottom: 40px;
   }
@@ -12,7 +12,7 @@ export const PartOfSpeech = styled.div`
   }
 `;
 
-export const PartOfSpeechTitle = styled.p`
+export const PartOfSpeech = styled.p`
   font-size: var(--font-size-heading-medium);
   line-height: var(--line-height-heading-medium);
   font-weight: var(--font-weight-bold);
@@ -43,7 +43,7 @@ export const HorizontalLine = styled.div`
   background-color: var(--color-line);
 `;
 
-export const MeaningWrapper = styled.div`
+export const DefinitionsWrapper = styled.div`
   &:not(:last-child) {
     margin-bottom: 64px;
   }
@@ -55,7 +55,7 @@ export const MeaningWrapper = styled.div`
   }
 `;
 
-export const MeaningTitle = styled.p`
+export const DefinitionsTitle = styled.p`
   font-size: var(--font-size-heading-small);
   line-height: var(--line-height-heading-small);
   font-weight: var(--font-weight-regular);

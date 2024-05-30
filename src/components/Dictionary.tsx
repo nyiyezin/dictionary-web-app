@@ -1,19 +1,26 @@
 import { useSelector } from "react-redux";
-import { DictionaryElement, Container } from "../styles/App.styled";
-import { IWord, selectWord } from "../redux/wordSlice";
-
 import { Header } from "./Header";
 import { Search } from "./Search";
-import Meaning from "./meaning";
+import { Word } from "./Word";
+import { DictionaryElement, Container } from "../styles/App.styled";
+import { selectWord } from "../redux/wordSlice";
 
 export function Dictionary() {
-  const words: IWord[] = useSelector(selectWord);
+  const words = useSelector(selectWord);
   return (
     <DictionaryElement>
       <Container>
         <Header />
         <Search />
-        {words.length > 0 && <Meaning words={words} />}
+        {words.length > 0 &&
+          words.map((word, index) => {
+            return (
+              <Word
+                key={index}
+                word={word}
+              />
+            );
+          })}
       </Container>
     </DictionaryElement>
   );

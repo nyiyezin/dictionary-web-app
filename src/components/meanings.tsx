@@ -1,9 +1,9 @@
 import {
+  Meaning,
   PartOfSpeech,
-  PartOfSpeechTitle,
   HorizontalLine,
-  MeaningWrapper,
-  MeaningTitle,
+  DefinitionsWrapper,
+  DefinitionsTitle,
   Definitions,
   DefinitionWrapper,
   DefinitionItem,
@@ -15,25 +15,12 @@ import {
 } from "../styles/Meanings.styled";
 import { useAppDispatch } from "../redux/store";
 import { setSearchValue } from "../redux/searchSlice";
-import { fetchWords } from "../redux/wordSliceFetchAsync";
+import { fetchWordAsync } from "../redux/wordSlice";
 import { url } from "../api/index";
-
-interface IMeaning {
-  definition: string;
-  synonyms: string[];
-  antonyms: string[];
-  example: string;
-}
-
-interface IMeanings {
-  partOfSpeech: string;
-  definitions: IMeaning[];
-  synonyms: string[];
-  antonyms: string[];
-}
+import { Meaning as IMeaning } from "../libs/types";
 
 interface MeaningsProps {
-  meanings: IMeanings[];
+  meanings: IMeaning[];
 }
 
 export function Meanings({ meanings }: MeaningsProps) {
@@ -42,20 +29,20 @@ export function Meanings({ meanings }: MeaningsProps) {
   const handleClick: React.MouseEventHandler<HTMLParagraphElement> = (e) => {
     const searchValue = (e.target as HTMLElement).innerHTML.replace(",", "");
     dispatch(setSearchValue(searchValue));
-    dispatch(fetchWords({ url, searchValue }));
+    dispatch(fetchWordAsync({ url, searchValue }));
   };
 
   return (
     <>
       {meanings.map((item, index) => (
-        <PartOfSpeech key={index}>
-          <PartOfSpeechTitle>
+        <Meaning key={index}>
+          <PartOfSpeech>
             {item.partOfSpeech}
             <HorizontalLine />
-          </PartOfSpeechTitle>
+          </PartOfSpeech>
 
-          <MeaningWrapper>
-            <MeaningTitle>Meaning</MeaningTitle>
+          <DefinitionsWrapper>
+            <DefinitionsTitle>Meaning</DefinitionsTitle>
             <Definitions>
               {item.definitions.map((item, index) => (
                 <DefinitionWrapper key={index}>
@@ -68,7 +55,7 @@ export function Meanings({ meanings }: MeaningsProps) {
                 </DefinitionWrapper>
               ))}
             </Definitions>
-          </MeaningWrapper>
+          </DefinitionsWrapper>
 
           {item.synonyms.length > 0 && (
             <VariantWrapper>
@@ -77,7 +64,7 @@ export function Meanings({ meanings }: MeaningsProps) {
                 {item.synonyms.map((word, index, arr) => (
                   <VariantLink
                     onClick={handleClick}
-                    key={word}>
+                    key={index}>
                     {word}
                     {index === arr.length - 1 ? "  " : ","}
                   </VariantLink>
@@ -93,7 +80,7 @@ export function Meanings({ meanings }: MeaningsProps) {
                 {item.antonyms.map((word, index, arr) => (
                   <VariantLink
                     onClick={handleClick}
-                    key={word}>
+                    key={index}>
                     {word}
                     {index === arr.length - 1 ? "  " : ","}
                   </VariantLink>
@@ -101,7 +88,7 @@ export function Meanings({ meanings }: MeaningsProps) {
               </VariantWords>
             </VariantWrapper>
           )}
-        </PartOfSpeech>
+        </Meaning>
       ))}
     </>
   );

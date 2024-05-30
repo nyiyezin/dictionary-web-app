@@ -1,9 +1,9 @@
 import axios from "axios";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { RootState } from "./store";
-import type { Word } from "../libs/types";
+import type { Dictionary } from "../libs/types";
 
-export interface WordState extends Word {}
+export interface WordState extends Dictionary {}
 interface InitialState {
   word: WordState[];
   status: string;

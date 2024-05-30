@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { ExternalLink, Play } from "lucide-react";
 import {
   MeaningElement,
   PhoneticWrapper,
@@ -12,23 +13,22 @@ import {
   SourceUrlsUl,
   SourceUrlsLi,
   Url,
-} from "../styles/Meaning.styled";
-import { Meanings } from "./meanings";
-import { IWord } from "../redux/wordSlice";
-import { ExternalLink, Play } from "lucide-react";
+} from "../styles/Word.styled";
+import { Meanings } from "./Meanings";
+import { Word as IWord } from "../libs/types";
 
-interface IMeaningProps {
-  words: IWord[];
+interface WordProps {
+  word: IWord;
 }
 
-export function Meaning({ words }: IMeaningProps) {
+export function Word({ word }: WordProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const [{ word, phonetic, phonetics, meanings, sourceUrls }] = words;
+  const { word: name, phonetic, phonetics, meanings, sourceUrls } = word;
 
   const audio = phonetics.filter((e) => e.audio !== "").map((e) => e.audio);
-  const uk = audio.find((e) => e.endsWith("uk.mp3"));
-  const us = audio.find((e) => e.endsWith("us.mp3"));
+  const uk = audio.find((e) => e?.endsWith("uk.mp3"));
+  const us = audio.find((e) => e?.endsWith("us.mp3"));
   const sortAudio = uk || us;
 
   const playAudio = () => {
@@ -41,7 +41,7 @@ export function Meaning({ words }: IMeaningProps) {
     <MeaningElement>
       <PhoneticWrapper>
         <WordWrapper>
-          <NormalWord>{word}</NormalWord>
+          <NormalWord>{name}</NormalWord>
           {phonetic ? (
             <PhoneticWord>{phonetic}</PhoneticWord>
           ) : (
@@ -49,8 +49,11 @@ export function Meaning({ words }: IMeaningProps) {
           )}
         </WordWrapper>
         {sortAudio && (
-          <PlayButton  onClick={playAudio}>
-            <Play width={25} height={25}/>
+          <PlayButton onClick={playAudio}>
+            <Play
+              width={25}
+              height={25}
+            />
           </PlayButton>
         )}
         <audio
@@ -81,5 +84,3 @@ export function Meaning({ words }: IMeaningProps) {
     </MeaningElement>
   );
 }
-
-export default Meaning;

@@ -11,7 +11,7 @@ import {
 import { useAppDispatch } from "../redux/store";
 import { setSearchValue, selectSearch } from "../redux/searchSlice.ts";
 import { reset } from "../redux/wordSlice";
-import { fetchWords } from "../redux/wordSliceFetchAsync";
+import { fetchWordAsync } from "../redux/wordSlice";
 import { url } from "../api/index.ts";
 
 export function Search() {
@@ -31,7 +31,7 @@ export function Search() {
       setVisibleAlert(true);
     } else {
       setVisibleAlert(false);
-      dispatch(fetchWords({ url, searchValue }));
+      dispatch(fetchWordAsync({ url, searchValue }));
     }
   };
 
