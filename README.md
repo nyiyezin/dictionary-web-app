@@ -1,6 +1,4 @@
-# Frontend Mentor - Dictionary Web App Solution
-
-This is a solution to the [Dictionary web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL).
+# Dictionary Web App
 
 I used:
 ![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat)
@@ -8,7 +6,6 @@ I used:
 ![Redux Badge](https://img.shields.io/badge/Redux-764ABC?logo=redux&logoColor=fff&style=flat)
 ![Framer Badge](https://img.shields.io/badge/Framer-05F?logo=framer&logoColor=fff&style=flat)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?logo=styled-components&logoColor=fff&style=flat)
-![Vercel Badge](https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=fff&style=flat)
 
 ## Table of Contents
 
@@ -40,7 +37,7 @@ I used:
   [![GitHub Badge](https://img.shields.io/badge/GitHub-Frontend%20Quiz%20App-3F54A3?logo=github&logoColor=fff&style=flat)](https://github.com/nyiyezin/fem-dictionary-web-app)
 
 - Live Site URL:
-  [![Vercel Badge](https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=fff&style=flat)](https://fem-dictionary-web-ov58frqxp-nyz83s-projects.vercel.app)
+  [![GitHub Badge](https://img.shields.io/badge/GitHub-Frontend%20Quiz%20App-3F54A3?logo=github&logoColor=fff&style=flat)](https://nyiyezin.github.io/fem-dictionary-web-app/)
 
 ## My Process
 
