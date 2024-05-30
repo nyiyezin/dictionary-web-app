@@ -12,7 +12,7 @@ export const Meaning = styled.div`
   }
 `;
 
-export const PartOfSpeech = styled.p`
+export const PartOfSpeech = styled.div`
   font-size: var(--font-size-heading-medium);
   line-height: var(--line-height-heading-medium);
   font-weight: var(--font-weight-bold);
