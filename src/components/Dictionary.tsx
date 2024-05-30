@@ -3,10 +3,12 @@ import { Header } from "./Header";
 import { Search } from "./Search";
 import { Word } from "./Word";
 import { DictionaryElement, Container } from "../styles/App.styled";
-import { selectWord } from "../redux/wordSlice";
+import { selectWord, selectStatus } from "../redux/wordSlice";
+import { NotFound } from "./NotFound";
 
 export function Dictionary() {
   const data = useSelector(selectWord);
+  const status = useSelector(selectStatus);
   return (
     <DictionaryElement>
       <Container>
@@ -21,6 +23,7 @@ export function Dictionary() {
               />
             );
           })}
+        {status === "error" && <NotFound />}
       </Container>
     </DictionaryElement>
   );
