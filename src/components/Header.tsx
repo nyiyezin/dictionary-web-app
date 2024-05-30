@@ -81,9 +81,9 @@ export function Header() {
           </AnimatePresence>
         </FontToggle>
         <TogglesDivider />
-        <ThemeToggleWrapper toggle={String(theme === "dark")}>
+        <ThemeToggleWrapper toggle={theme === "dark"}>
           <ThemeToggle
-            toggle={String(theme === "dark")}
+            toggle={theme === "dark"}
             onClick={() =>
               dispatch(setTheme(theme === "light" ? "dark" : "light"))
             }
