@@ -34,10 +34,10 @@ I used:
 ## Links
 
 - Solution URL:
-  [![GitHub Badge](https://img.shields.io/badge/GitHub-Frontend%20Quiz%20App-3F54A3?logo=github&logoColor=fff&style=flat)](https://github.com/nyiyezin/fem-dictionary-web-app)
+  [![GitHub Badge](https://img.shields.io/badge/GitHub-Frontend%20Quiz%20App-3F54A3?logo=github&logoColor=fff&style=flat)](https://github.com/nyiyezin/dictionary-web-app)
 
 - Live Site URL:
-  [![GitHub Badge](https://img.shields.io/badge/GitHub-Frontend%20Quiz%20App-3F54A3?logo=github&logoColor=fff&style=flat)](https://nyiyezin.github.io/fem-dictionary-web-app/)
+  [![GitHub Badge](https://img.shields.io/badge/GitHub-Frontend%20Quiz%20App-3F54A3?logo=github&logoColor=fff&style=flat)](https://nyiyezin.github.io/dictionary-web-app/)
 
 ## My Process
 

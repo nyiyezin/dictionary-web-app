@@ -1,6 +1,6 @@
 {
-  "homepage": "https://github.com/nyiyezin/fem-dictionary-web-app",
-  "name": "fem-dictionary-web-app",
+  "homepage": "https://github.com/nyiyezin/dictionary-web-app",
+  "name": "dictionary-web-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
